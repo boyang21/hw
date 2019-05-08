@@ -1,0 +1,6 @@
+read_verilog -sv /Users/yangbo/anil/cec/hdl/adder1_impl.v
+read_verilog -sv /Users/yangbo/anil/cec/hdl/adder1_spec.v
+miter -equiv -make_assert -make_outputs adder1_spec adder1_impl miter
+proc
+flatten 
+sat -verify -prove-asserts -show-inputs -show-outputs miter
